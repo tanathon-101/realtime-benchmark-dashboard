@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Realtime Benchmark";
+}
+
+<div class="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+    <div class="max-w-xl w-full bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">
+            🧠 Realtime Benchmark
+        </h1>
+        <ul class="text-lg space-y-3 text-gray-700 dark:text-gray-300">
+            <li>
+                <span class="font-medium text-gray-500 dark:text-gray-400">Memory Usage:</span>
+                <span id="mem" class="font-mono font-bold text-blue-600 dark:text-blue-400">--</span> MB
+            </li>
+            <li>
+                <span class="font-medium text-gray-500 dark:text-gray-400">Thread Count:</span>
+                <span id="threads" class="font-mono font-bold text-purple-600 dark:text-purple-400">--</span>
+            </li>
+            <li>
+                <span class="font-medium">GC Gen0:</span>
+                <span id="g0" class="font-mono">--</span>
+            </li>
+            <li>
+                <span class="font-medium">GC Gen1:</span>
+                <span id="g1" class="font-mono">--</span>
+            </li>
+            <li>
+                <span class="font-medium">GC Gen2:</span>
+                <span id="g2" class="font-mono">--</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script src="~/js/signalr-metrics.js"></script>
+}
